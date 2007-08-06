@@ -17,6 +17,7 @@ Url: http://www.ndesk.org/DBusSharp
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mono-devel
 BuildRequires: ndesk-dbus
+BuildRequires: gtk-sharp2
 Requires: glib2
 BuildArch: noarch
 
