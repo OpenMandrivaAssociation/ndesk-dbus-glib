@@ -10,6 +10,7 @@ Version: %{version}
 Release: %{release}
 Source0: http://www.ndesk.org/archive/dbus-sharp/%{oname}-%{version}.tar.gz
 Source1: include.mk
+Patch: dbus-sharp-glib-0.3-pkgconfig.patch
 License: MIT
 Group: System/Libraries
 Url: http://www.ndesk.org/DBusSharp
@@ -30,6 +31,7 @@ them to talk to one another in a peer-to-peer configuration.
 
 %prep
 %setup -q -n %oname-%version
+%patch -p1
 cp %SOURCE1 .
 cp %_prefix/lib/mono/ndesk-dbus-1.0/*.dll glib
 
