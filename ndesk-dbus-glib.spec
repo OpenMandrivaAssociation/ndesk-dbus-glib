@@ -1,6 +1,6 @@
 %define name ndesk-dbus-glib
 %define version 0.3
-%define release %mkrel 1
+%define release %mkrel 2
 %define oname dbus-sharp-glib
 %define pkgname ndesk-dbus-glib-1.0
 
