@@ -20,6 +20,7 @@ BuildRequires: ndesk-dbus
 BuildRequires: gtk-sharp2
 Requires: glib2
 BuildArch: noarch
+%define _requires_exceptions lib.*glib2.0_0
 
 %description
 dbus-sharp is a C# implementation of D-Bus. It's often referred to as
