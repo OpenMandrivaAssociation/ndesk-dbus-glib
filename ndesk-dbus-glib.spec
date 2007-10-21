@@ -1,16 +1,13 @@
 %define name ndesk-dbus-glib
-%define version 0.3
-%define release %mkrel 2
-%define oname dbus-sharp-glib
+%define version 0.4.1
+%define release %mkrel 1
 %define pkgname ndesk-dbus-glib-1.0
 
 Summary: Managed D-Bus implementation - GLib integration
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://www.ndesk.org/archive/dbus-sharp/%{oname}-%{version}.tar.gz
-Source1: include.mk
-Patch: dbus-sharp-glib-0.3-pkgconfig.patch
+Source0: http://www.ndesk.org/archive/dbus-sharp/%{name}-%{version}.tar.gz
 License: MIT
 Group: System/Libraries
 Url: http://www.ndesk.org/DBusSharp
@@ -32,23 +29,15 @@ applications interface with the system event bus as well as allowing
 them to talk to one another in a peer-to-peer configuration.
 
 %prep
-%setup -q -n %oname-%version
-%patch -p1
-cp %SOURCE1 .
-cp %_prefix/lib/mono/ndesk-dbus-1.0/*.dll glib
+%setup -q -n %name-%version
 
 %build
-make DBUS_SHARP_PREFIX=`pwd`
-make DBUS_SHARP_PREFIX=`pwd` -C examples
-
+./configure --prefix=%_prefix
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd glib
-%makeinstall DBUS_SHARP_PREFIX=..
-cd ..
-install -m 644 -D %pkgname.pc.in %buildroot%_datadir/pkgconfig/%pkgname.pc
-perl -pi -e "s^\@prefix\@^%_prefix^" %buildroot%_datadir/pkgconfig/%pkgname.pc
+%makeinstall_std pkgconfigdir=%_datadir/pkgconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
