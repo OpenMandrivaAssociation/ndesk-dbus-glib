@@ -1,6 +1,6 @@
 %define name ndesk-dbus-glib
 %define version 0.4.1
-%define release %mkrel 6
+%define release %mkrel 7
 %define pkgname ndesk-dbus-glib-1.0
 
 Summary: Managed D-Bus implementation - GLib integration
