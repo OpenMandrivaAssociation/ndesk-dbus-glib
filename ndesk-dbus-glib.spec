@@ -3,7 +3,7 @@
 Summary:	Managed D-Bus implementation - GLib integration
 Name:		ndesk-dbus-glib
 Version:	0.4.1
-Release:	11
+Release:	12
 License:	MIT
 Group:		System/Libraries
 Url:		http://www.ndesk.org/DBusSharp
