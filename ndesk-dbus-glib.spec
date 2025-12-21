@@ -9,6 +9,11 @@ Group:		System/Libraries
 Url:		https://www.ndesk.org/DBusSharp
 Source0:	http://www.ndesk.org/archive/dbus-sharp/%{name}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk-sharp-2.0)
 BuildRequires:	pkgconfig(mono)
 BuildRequires:	pkgconfig(ndesk-dbus-1.0)
